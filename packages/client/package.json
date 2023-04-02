@@ -1,9 +1,10 @@
 {
-  "name": "client",
+  "name": "@glorious-todo/client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
+    "@glorious-todo/database": "^1.0.0",
     "@mantine/core": "^6.0.5",
     "@mantine/form": "^6.0.5",
     "@mantine/hooks": "^6.0.5",

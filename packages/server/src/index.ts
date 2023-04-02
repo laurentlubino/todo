@@ -1,7 +1,7 @@
 import express from "express";
 import helmet from "helmet";
 import dotenv from "dotenv";
-import { db } from "../prisma";
+import { db } from "@glorious-todo/database";
 
 import { TodosDatasource, UsersDatasource } from "./datasources";
 import { createTodosEndpoints, createUsersEndpoints } from "./endpoints";

@@ -1,5 +1,5 @@
 {
-  "name": "glorious",
+  "name": "glorious-todo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,6 @@
   "workspaces": [
     "packages/server",
     "packages/client",
-    "packages/infra"
+    "packages/database"
   ]
 }
