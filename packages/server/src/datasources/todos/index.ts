@@ -1,5 +1,5 @@
-import { Prisma, PrismaClient } from "@prisma/client";
-
+import { PrismaClient } from "@prisma/client";
+import { Prisma } from "@glorious-todo/database";
 export class TodosDatasource {
   constructor(private database: PrismaClient) {}
 
