@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider } from "@mantine/core";
+import { Route, Routes } from "react-router-dom";
+import { RequireAuth } from "./pages/login/RequireAuth";
+import { LoginPage } from "./pages/login/LoginPage";
+import { TodosPage } from "./pages/todos/TodosPage";
+import { AuthProvider } from "./utils/auth";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <AuthProvider>
+        <Routes>
+          <Route>
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/"
+              element={
+                <RequireAuth>
+                  <TodosPage />
+                </RequireAuth>
+              }
+            />
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </MantineProvider>
   );
 }
-
-export default App;
